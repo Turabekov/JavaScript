@@ -80,7 +80,7 @@ const personalMovieDB = {
                 personalMovieDB.genres[i - 1] = genre;
             }
 
-            // ! method with arrays
+            //z method with arrays
 
             // let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
 
@@ -105,3 +105,8 @@ personalMovieDB.writeYourGenres();
 personalMovieDB.showMyDB();
 
 // console.log(personalMovieDB);
+
+let time = "";
+5 > 3 || 2 ? (time = "Day") : (time = "Night");
+
+console.log(time);
