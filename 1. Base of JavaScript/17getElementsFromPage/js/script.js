@@ -1,68 +1,23 @@
 "use strict";
 
-const restorantData = {
-    menu: [
-        {
-            name: "Salad Caesar",
-            price: "14$",
-        },
-        {
-            name: "Pizza Diavola",
-            price: "9$",
-        },
-        {
-            name: "Beefsteak",
-            price: "17$",
-        },
-        {
-            name: "Napoleon",
-            price: "7$",
-        },
-    ],
-    waitors: [
-        { name: "Alice", age: 22 },
-        { name: "John", age: 24 },
-    ],
-    averageLunchPrice: "20$",
-    openNow: true,
-};
+const box = document.getElementById("box");
 
-// console.log(parseInt(restorantData.menu[0].price))
-console.log(restorantData.menu[0].price.slice(0, -1));
+console.log(box); // HTMLCollection
 
-function isOpen(prop) {
-    let answer = "";
-    prop ? (answer = "Открыто") : (answer = "Закрыто");
+const btns = document.getElementsByTagName("button"); // psevdomassiv don't have methods
 
-    return answer;
-}
+console.log(btns[0]); // HTMLCollection
 
-console.log(isOpen(restorantData.openNow));
+const circles = document.getElementsByClassName("circle"); // don't have methods
+console.log(circles); // HTMLCollection
 
-function isAverageLunchPriceTrue(fDish, sDish, average) {
-    if (
-        +fDish.price.slice(0, -1) + +sDish.price.slice(0, -1) <
-        +average.slice(0, -1)
-    ) {
-        return "Цена ниже средней";
-    } else {
-        return "Цена выше средней";
-    }
-}
+const hearts = document.querySelectorAll(".heart"); // have only one methods forEach()
 
-console.log(
-    isAverageLunchPriceTrue(
-        restorantData.menu[0],
-        restorantData.menu[1],
-        restorantData.averageLunchPrice
-    )
-);
+console.log(hearts); // NodeList
 
-function transferWaitors(data) {
-    const copy = Object.assign({}, data);
+hearts.forEach((item) => {
+    console.log(item);
+});
 
-    copy.waitors = [{ name: "Mike", age: 32 }];
-    return copy;
-}
-
-transferWaitors(restorantData.waitors);
+const oneHeart = document.querySelector(".heart"); // first element
+console.log(oneHeart);
