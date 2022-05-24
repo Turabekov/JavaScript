@@ -1,14 +1,23 @@
-function slider() {
+function slider({
+    container,
+    slide,
+    nextArrow,
+    prevArrow,
+    totalCounter,
+    currentCounter,
+    wrapper,
+    field,
+}) {
     // * Slider
 
-    const slides = document.querySelectorAll(".offer__slide"),
-        slider = document.querySelector(".offer__slider"),
-        prev = document.querySelector(".offer__slider-prev"),
-        next = document.querySelector(".offer__slider-next"),
-        total = document.querySelector("#total"),
-        current = document.querySelector("#current"),
-        slidesWrapper = document.querySelector(".offer__slider-wrapper"),
-        slidesField = document.querySelector(".offer__slider-inner"),
+    const slides = document.querySelectorAll(slide),
+        slider = document.querySelector(container),
+        prev = document.querySelector(prevArrow),
+        next = document.querySelector(nextArrow),
+        total = document.querySelector(totalCounter),
+        current = document.querySelector(currentCounter),
+        slidesWrapper = document.querySelector(wrapper),
+        slidesField = document.querySelector(field),
         width = window.getComputedStyle(slidesWrapper).width;
 
     let slideIndex = 1;
@@ -124,49 +133,6 @@ function slider() {
             dotsOpacity();
         });
     });
-
-    // showSlides(slideIndex);
-
-    // if (slides.length < 10) {
-    //     total.textContent = `0${slides.length}`;
-    // } else {
-    //     total.textContent = `${slides.length}`;
-    // }
-
-    // function showSlides(n) {
-    //     if (n > slides.length) {
-    //         slideIndex = 1;
-    //     }
-
-    //     if (n < 1) {
-    //         slideIndex = slides.length;
-    //     }
-
-    //     slides.forEach((slide) => {
-    //         slide.classList.add("hide");
-    //         slide.classList.remove("show");
-    //     });
-
-    //     slides[slideIndex - 1].classList.add("show");
-    //     slides[slideIndex - 1].classList.remove("hide");
-
-    // if (slides.length < 10) {
-    //     current.textContent = `0${slideIndex}`;
-    // } else {
-    //     total.textContent = `${slideIndex}`;
-    // }
-    // }
-
-    // function plusSlides(n) {
-    //     showSlides((slideIndex += n));
-    // }
-
-    // prev.addEventListener("click", () => {
-    //     plusSlides(-1);
-    // });
-    // next.addEventListener("click", () => {
-    //     plusSlides(1);
-    // });
 }
 
-module.exports = slider;
+export default slider;
